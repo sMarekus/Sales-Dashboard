@@ -4,17 +4,17 @@ import { Order } from './Order';
 @Entity()
 export class Customer {
     @PrimaryGeneratedColumn()
-    id: number;
+    id!: number;
 
     @Column()
-    firstName: string;
+    firstName!: string;
 
     @Column()
-    lastName: string;
+    lastName!: string;
 
     @Column()
-    email: string;
+    email!: string;
     
     @OneToMany(() => Order, order => order.customer)
-    orders: Order[];
+    orders!: Order[];
 }

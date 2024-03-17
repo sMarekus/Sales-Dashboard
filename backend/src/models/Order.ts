@@ -5,20 +5,20 @@ import { OrderItem } from './OrderItem';
 @Entity()
 export class Order {
     @PrimaryGeneratedColumn()
-    id: number;
+    id!: number;
 
     @Column()
-    purchaseDate: Date;
+    purchaseDate!: Date;
 
     @Column()
-    country: string;
+    country!: string;
 
     @Column()
-    device: string;
+    device!: string;
 
     @ManyToOne(() => Customer, customer => customer.orders)
-    customer: Customer;
+    customer!: Customer;
 
     @OneToMany(() => OrderItem, orderItem => orderItem.order)
-    orderItems: OrderItem[];
+    orderItems!: OrderItem[];
 }
