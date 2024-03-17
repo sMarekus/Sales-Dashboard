@@ -4,7 +4,6 @@ import { OrderItem } from '../models/OrderItem';
 
 const router = Router();
 
-// Get all customers
 router.get('/', async (req, res) => {
     const orderItemRepository = AppDataSource.getRepository(OrderItem);
     const orderItems = await orderItemRepository.find();

@@ -6,10 +6,12 @@ import orderItemRoutes from './routes/orderItemRoutes';
 import dashboardRoutes from './routes/dashboardRoutes';
 
 const app = express();
-const port = 3000; // or any port you prefer
+const cors = require('cors');
+const port = 3000;
 
 AppDataSource.initialize().then(() => {
     app.use(express.json());
+    app.use(cors());
 
     app.use('/api/customers', customerRoutes);
     app.use('/api/orders', orderRoutes);
